@@ -15,7 +15,7 @@ public class TestFileReader
    public static Collection<Object[]> getDatafromFile(String fileName)
    {
       List<String> lines  = null;
-       ArrayList<Object[]> testData = new ArrayList<>();
+      ArrayList<Object[]> testData = new ArrayList<>();
       Object arrData[];
 
           try {

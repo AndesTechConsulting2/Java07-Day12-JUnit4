@@ -3,27 +3,36 @@ package org.andestech.learning.rfb18.g2;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import java.util.Collection;
-import java.util.List;
 
+@RunWith(Parameterized.class)
 public class AppTest2 {
     private double a,b,res;
 
-    private static Collection<Object[]> testList;
+    //private static Collection<Object[]> testList = null;
 
-//    public AppTest2(double a, double b, double res) {
-//        this.a = a;
-//        this.b = b;
-//        this.res = res;
+    public AppTest2(double a, double b, double res) {
+        this.a = a;
+        this.b = b;
+        this.res = res;
+    }
+
+   // public AppTest2(){}
+
+//    @BeforeClass
+//    public static void classInit(){
+//
+//      testList =  TestFileReader.getDatafromFile("src/test/resources/positiveTestData");
 //    }
 
-    public AppTest2(){}
 
-    @BeforeClass
-    public static void classInit(){
-
-      testList =  TestFileReader.getDatafromFile("src/test/resources/positiveTestData");
+    @Parameterized.Parameters
+    public static Collection<Object[]> getData()
+    {
+        return TestFileReader.getDatafromFile("src/test/resources/positiveTestData");
     }
 
     @Test
